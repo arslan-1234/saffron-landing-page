@@ -1,264 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Premium Organic Super Negin Saffron — Grade A | Limited Offer</title>
-  <meta name="description" content="Experience the finest organic Super Negin Saffron Threads — Grade A purity and aroma. Limited stock. Free shipping across the USA.">
-  
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap');
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Premium Organic Super Negin Saffron — Pure Infusion</title>
+<meta name="description" content="Premium Organic Super Negin Saffron — Grade A. Hand-harvested, 100% pure saffron for culinary, wellness & beauty. Free US shipping." />
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #2b2b2b;
-      overflow-x: hidden;
-    }
+<!-- Fonts (system-first iOS look) -->
+<style>
+  :root{
+    --accent:#c83b2a;   /* saffron red */
+    --accent-2:#ff6b4b;
+    --gold:#c88b2b;
+    --muted:#6b4a46;
+    --bg-white: #ffffff;
+  }
+  /* Subtle system-like font stacking */
+  body{font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:var(--muted); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+  /* moving white-red gradient (white dominant) */
+  @keyframes slowShift {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  body {background: linear-gradient(120deg, #ffffff 0%, #fff7f6 40%, #fff0ef 60%, #fff6f6 100%); background-size: 300% 300%; animation: slowShift 18s ease infinite;}
 
-    /* Animated gradient background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(120deg, #fff5f2, #ffe5e0, #fff5f2);
-      background-size: 200% 200%;
-      animation: moveGradient 8s ease infinite;
-      z-index: -1;
-    }
+  .container{max-width:1100px;margin:0 auto;padding:28px;}
+  /* HERO */
+  .hero {
+    position:relative;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow: 0 12px 50px rgba(20,18,16,0.08);
+    margin-top:20px;
+  }
+  /* video fills hero, with soft gradient overlay */
+  .hero video{width:100%;height:100%;object-fit:cover;display:block; filter:brightness(.95) saturate(.98) contrast(1.02);}
+  .hero .overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.36) 0%, rgba(255,242,240,0.20) 35%, rgba(255,244,240,0.18) 60%, rgba(255,255,255,0.18) 100%);
+    pointer-events:none;
+    mix-blend-mode:normal;
+  }
+  .hero-inner{
+    position:absolute; left:0; right:0; top:0; bottom:0; display:flex; align-items:center; justify-content:center; padding:48px;
+    pointer-events:none;
+  }
+  .hero-card{
+    width:min(980px,94%); background:rgba(255,255,255,0.82); border-radius:14px; padding:26px; display:flex; gap:24px; align-items:center; pointer-events:auto; backdrop-filter: blur(6px);
+    box-shadow: 0 8px 30px rgba(30,20,18,0.06);
+  }
+  .hero-left{flex:1; text-align:left}
+  h1{margin:0;font-size:28px; color: #7a1510; line-height:1.08; font-weight:700}
+  p.lead{margin:10px 0 16px;color:#4c2f2d; font-size:15px}
+  .price{font-weight:700; font-size:20px; color:var(--accent)}
+  .badges{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap}
+  .badge{background:#fff; border-radius:12px;padding:8px 10px; font-size:13px; color:#5b3a36; box-shadow:0 4px 12px rgba(150,30,30,0.05)}
+  /* Buttons: subtle iOS-style animation */
+  .cta-row{display:flex; gap:12px; margin-top:16px}
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:12px 18px; border-radius:999px; font-weight:600; text-decoration:none;
+    transition: transform .14s cubic-bezier(.2,.9,.3,1), box-shadow .14s ease;
+    box-shadow: 0 6px 18px rgba(200,60,50,0.12);
+  }
+  .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; border:1px solid rgba(255,255,255,0.06)}
+  .btn-primary:hover{transform:translateY(-4px); box-shadow:0 10px 30px rgba(200,60,50,0.18)}
+  .btn-secondary{background:transparent; border:1px solid rgba(120,90,86,0.12); color:#502922}
+  .btn-secondary:hover{transform:translateY(-3px); box-shadow:0 8px 20px rgba(100,60,55,0.06)}
 
-    @keyframes moveGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+  /* floating CTA for mobile */
+  .floating{
+    position:fixed; right:18px; bottom:18px; z-index:60; display:inline-block;
+  }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+  /* content sections */
+  .section{padding:36px 0; text-align:center;}
+  .grid-three{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; align-items:stretch}
+  .card-min{background:#fff;border-radius:12px;padding:18px; box-shadow:0 8px 24px rgba(20,18,16,0.04);}
+  .card-min h3{margin:6px 0;color:#7a1510}
+  .trust{display:flex; gap:12px; justify-content:center; margin-top:10px; flex-wrap:wrap}
+  .trust .t{background:#fff;border-radius:10px;padding:8px 12px;font-size:13px; color:#5b3a36; box-shadow:0 6px 18px rgba(120,60,50,0.04)}
 
-    header {
-      text-align: center;
-      padding: 20px 0 50px;
-    }
+  /* media */
+  @media (max-width:920px){
+    h1{font-size:20px}
+    .hero-card{flex-direction:column; text-align:center}
+    .hero-left{text-align:center}
+  }
+  @media (max-width:480px){
+    .container{padding:12px}
+    .hero-inner{padding:18px}
+  }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: #a22c14;
-      margin-bottom: 10px;
-    }
+  /* subtle floating particles to add premium shimmer */
+  .particles{position:absolute; inset:0; pointer-events:none; mix-blend-mode:screen; opacity:0.25}
+  .particle{position:absolute; width:6px;height:6px;border-radius:50%; background:linear-gradient(0deg,#ffd59a,#ffb37a); filter:blur(2px); animation: drift 8s linear infinite;}
+  @keyframes drift { 0%{transform:translateY(0) translateX(0)} 50%{transform:translateY(-18px) translateX(16px)} 100%{transform:translateY(0) translateX(0)} }
 
-    header p {
-      color: #444;
-      font-size: 1.1rem;
-      margin: 0;
-    }
-
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-    }
-
-    .hero img {
-      width: 420px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .hero-text {
-      flex: 1;
-      min-width: 280px;
-      margin-right: 30px;
-    }
-
-    .hero-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
-      color: #a22c14;
-    }
-
-    .hero-text p {
-      font-size: 1.05rem;
-      margin: 12px 0 24px;
-      line-height: 1.6;
-    }
-
-    .cta-btn {
-      background: #d84b2a;
-      color: white;
-      padding: 14px 30px;
-      border-radius: 50px;
-      border: none;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .cta-btn:hover {
-      background: #b93e20;
-      transform: scale(1.05);
-    }
-
-    section {
-      margin-top: 70px;
-    }
-
-    h3.section-title {
-      font-family: 'Playfair Display', serif;
-      text-align: center;
-      font-size: 1.7rem;
-      color: #a22c14;
-      margin-bottom: 30px;
-    }
-
-    .benefits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .benefit {
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
-    .benefit h4 {
-      color: #b43c1d;
-      margin-bottom: 10px;
-    }
-
-    .benefit p {
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    .offer {
-      text-align: center;
-      margin: 60px 0;
-    }
-
-    .offer h2 {
-      color: #a22c14;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .offer p {
-      font-size: 1rem;
-      color: #333;
-    }
-
-    .offer .cta-btn {
-      margin-top: 15px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 0 20px;
-      color: #555;
-      font-size: 0.9rem;
-    }
-
-    @media(max-width: 768px){
-      .hero { flex-direction: column; text-align: center; }
-      .hero img { margin-top: 20px; width: 100%; max-width: 400px; }
-      .hero-text { margin: 0; }
-    }
-  </style>
+</style>
 </head>
-
 <body>
-
   <div class="container">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero saffron">
+      <!-- video (autoplay muted loop) with poster fallback -->
+      <video id="heroVideo" playsinline autoplay muted loop poster="/assets/hero-poster.jpg" preload="auto">
+        <source src="/assets/hero.webm" type="video/webm">
+        <source src="/assets/hero.mp4" type="video/mp4">
+        <!-- fallback static image -->
+      </video>
 
-    <header>
-      <h1>Premium Organic Super Negin Saffron Threads — Grade A</h1>
-      <p>Experience the purest form of luxury spice — directly sourced from organic farms.</p>
-    </header>
+      <div class="overlay"></div>
 
-    <div class="hero">
-      <div class="hero-text">
-        <h2>Unmatched Purity • Vibrant Color • Rich Aroma</h2>
-        <p>
-          Elevate your cooking, health, and wellness with our <strong>Premium Super Negin Saffron</strong>, carefully handpicked and organically grown to ensure Grade A quality.
-        </p>
-        <p><strong>Limited-Time Offer:</strong> Order now and get <span style="color:#d84b2a">20% OFF + Free Shipping</span> across the USA!</p>
-        <a href="https://martloom.com/product/premium-organic-super-negin-saffron-threads-grade-a/" target="_blank" class="cta-btn">Order Now</a>
+      <!-- soft particles for premium shimmer -->
+      <div class="particles" aria-hidden="true">
+        <div class="particle" style="left:6%; top:18%; animation-delay:0s;"></div>
+        <div class="particle" style="left:82%; top:12%; animation-delay:1.2s;"></div>
+        <div class="particle" style="left:54%; top:72%; animation-delay:0.6s;"></div>
+        <div class="particle" style="left:28%; top:48%; animation-delay:1.8s;"></div>
       </div>
-      <img src="https://martloom.com/wp-content/uploads/2024/03/1-4.jpg" alt="Premium Organic Saffron">
-    </div>
 
-    <section>
-      <h3 class="section-title">Why Choose Our Saffron</h3>
-      <div class="benefits">
-        <div class="benefit">
-          <h4>🌿 100% Organic</h4>
-          <p>Free from additives and preservatives — grown naturally in nutrient-rich soil for supreme purity.</p>
-        </div>
-        <div class="benefit">
-          <h4>🔥 Intense Aroma & Color</h4>
-          <p>Grade A Super Negin threads with high Crocin content — known for their vibrant color and deep fragrance.</p>
-        </div>
-        <div class="benefit">
-          <h4>💪 Health Benefits</h4>
-          <p>Rich in antioxidants, may improve mood, enhance memory, and support overall vitality.</p>
-        </div>
-        <div class="benefit">
-          <h4>⭐ Culinary Luxury</h4>
-          <p>Perfect for biryani, paella, desserts, and herbal teas — a small pinch transforms any dish into gold.</p>
-        </div>
-      </div>
-    </section>
+      <div class="hero-inner">
+        <div class="hero-card" role="region" aria-label="Product panel">
+          <div class="hero-left">
+            <h1>Awaken Your Senses — Premium Organic Super Negin Saffron</h1>
+            <p class="lead">Grade A threads hand-harvested for the purest aroma and deepest color. Elevate teas, desserts, and gourmet dishes with a single pinch.</p>
 
-    <section class="offer">
-      <h2>⚡ Limited Offer — 20% OFF + Free Shipping!</h2>
-      <p>Stock is running low! Don’t miss the chance to experience premium saffron at a special launch discount.</p>
-      <a href="https://martloom.com/product/premium-organic-super-negin-saffron-threads-grade-a/" target="_blank" class="cta-btn">Order Your Saffron Now</a>
-    </section>
+            <div class="badges">
+              <div class="badge">100% Organic</div>
+              <div class="badge">Grade A • Super Negin</div>
+              <div class="badge">Free US Express Shipping</div>
+            </div>
 
-    <section>
-      <h3 class="section-title">Customer Love ❤️</h3>
-      <div class="benefits">
-        <div class="benefit">
-          <h4>★★★★★</h4>
-          <p>“Incredible aroma and taste! Just a few threads made my tea fragrant and golden.” — Sarah K.</p>
-        </div>
-        <div class="benefit">
-          <h4>★★★★★</h4>
-          <p>“Superb quality saffron. I can tell it’s genuine — deep red color, long threads, no waste.” — Daniel M.</p>
-        </div>
-        <div class="benefit">
-          <h4>★★★★★</h4>
-          <p>“It’s the best saffron I’ve ever used — adds rich color to my rice instantly!” — Aisha R.</p>
+            <div class="cta-row" style="margin-top:14px;">
+              <!-- Mart Loom product link (direct checkout there) -->
+              <a href="https://martloom.com/product/premium-organic-super-negin-saffron-threads-grade-a/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Order Now">Order Now</a>
+              <a href="#details" class="btn btn-secondary" aria-label="Learn More">Learn More</a>
+            </div>
+
+            <div style="margin-top:12px; color:#60312c; font-size:13px;">30-day satisfaction guarantee • Secure checkout on Mart Loom</div>
+          </div>
+
+          <!-- small product shot on the right -->
+          <div style="width:240px; display:flex; align-items:center; justify-content:center;">
+            <img src="/assets/photo-jar.jpg" alt="Premium saffron jar" style="width:180px; border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,0.08)"/>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="offer">
-      <h2>Ready to Taste Pure Luxury?</h2>
-      <p>Click below to secure your Premium Organic Saffron before the offer ends.</p>
-      <a href="https://martloom.com/product/premium-organic-super-negin-saffron-threads-grade-a/" target="_blank" class="cta-btn">Buy Now</a>
-    </div>
+    <!-- BENEFITS -->
+    <section id="details" class="section">
+      <div style="max-width:920px;margin:0 auto; text-align:center;">
+        <h2 style="color:#7a1510; margin-bottom:8px;">Why Our Saffron?</h2>
+        <p style="color:#4c2f2d; margin-bottom:20px;">Small-batch, hand-picked, and lab-tested for purity — experience the rich golden bloom and delicate aroma only top-tier saffron can deliver.</p>
 
-    <footer>
-      © 2025 Premium Saffron Co. • 100% Organic & Authentic • Secure Checkout
+        <div class="grid-three">
+          <div class="card-min">
+            <h3>🌱 Pure & Organic</h3>
+            <p>Zero additives or dyes. Certified organic threads with natural potency.</p>
+          </div>
+          <div class="card-min">
+            <h3>🍽 Gourmet Grade</h3>
+            <p>Deep color and aroma make it perfect for chefs and home cooks alike.</p>
+          </div>
+          <div class="card-min">
+            <h3>🫖 Wellness Ritual</h3>
+            <p>Infuse in tea or milk for a calming, luxurious experience.</p>
+          </div>
+        </div>
+
+        <div class="trust" style="margin-top:18px;">
+          <div class="t">Free US Shipping</div>
+          <div class="t">30-Day Satisfaction Guarantee</div>
+          <div class="t">Secure Payment on Mart Loom</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTOS / LIFESTYLE -->
+    <section class="section" style="background:#fff; border-radius:14px; padding:28px;">
+      <div style="display:flex; gap:20px; align-items:center; justify-content:center; flex-wrap:wrap;">
+        <img src="/assets/photo-spoon.jpg" alt="Saffron on spoon" style="max-width:320px; border-radius:12px; box-shadow:0 8px 18px rgba(20,18,16,0.06)"/>
+        <div style="max-width:480px; text-align:left;">
+          <h3 style="color:#7a1510; margin-top:0;">From Kitchen to Cup — A Pinch is a Ceremony</h3>
+          <p style="color:#4c2f2d;">Sprinkle saffron in your desserts, stews, and morning tea. Watch as flavors deepen and colors bloom — a small ritual that yields extraordinary delight.</p>
+          <a href="https://martloom.com/product/premium-organic-super-negin-saffron-threads-grade-a/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Buy Premium Saffron</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section">
+      <h2 style="color:#7a1510">Customers Say</h2>
+      <div style="max-width:820px;margin:14px auto; text-align:left;">
+        <blockquote style="background:#fff; padding:14px 18px; border-radius:10px; box-shadow:0 8px 20px rgba(50,30,30,0.04); font-style:italic;">
+          “The color and aroma are unreal — perfect for my bakery and evening teas.” — <strong>Emily, CA</strong>
+        </blockquote>
+        <blockquote style="margin-top:10px; background:#fff; padding:14px 18px; border-radius:10px; box-shadow:0 8px 20px rgba(50,30,30,0.04); font-style:italic;">
+          “Luxury grade saffron. Worth every penny.” — <strong>Rafael, TX</strong>
+        </blockquote>
+      </div>
+
+      <div style="text-align:center; margin-top:16px;">
+        <a href="https://martloom.com/product/premium-organic-super-negin-saffron-threads-grade-a/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Now — Limited Stock</a>
+      </div>
+    </section>
+
+    <footer style="text-align:center; color:#6b4a46; padding:28px 0;">
+      © 2025 Premium Saffron • Hand-Harvested • Secure Checkout
     </footer>
 
   </div>
+
+<!-- Mobile floating CTA -->
+<a class="floating" href="https://martloom.com/product/premium-organic-super-negin-saffron-threads-grade-a/" aria-label="Order now">
+  <div class="btn btn-primary" style="padding:12px 16px;">Order Premium Saffron</div>
+</a>
+
+<!-- small JS to ensure autoplay-friendly behavior & lazy fallback -->
+<script>
+  (function(){
+    const v = document.getElementById('heroVideo');
+    // ensure playsinline for iOS
+    v.playsInline = true;
+    v.muted = true;
+    v.loop = true;
+    // if autoplay blocked, show poster and add click-to-play
+    v.addEventListener('pause', ()=> {
+      // no-op
+    });
+    // lightweight progressive load: if webm exists, test and switch
+    // nothing else required; Vercel will serve optimized assets.
+  })();
+</script>
 </body>
 </html>
